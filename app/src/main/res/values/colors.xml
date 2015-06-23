@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_qs">#e8476d</color>
+    <color name="highlight_qs">#69d0cf</color>
+    <color name="secondary_qs">#4d75b8</color>
+    <color name="main_text_color">#222</color>
+    <color name="light_text_color">#444</color>
+    <color name="custom_fragment_dialog_subtitle_background">#f1f1f1</color>
+
+    <!-- Graph bar colors -->
+    <color name="empty_graph_bar">#64aeaeae</color>
+    <color name="exceed_graph_bar">#6fdcdc</color>
+    <color name="vertical_labels">#aaaaaa</color>
+    <color name="low_level_bar">#6fdcdc</color>
+    <color name="medium_level_bar">#69cdcd</color>
+    <color name="high_level_bar">#5ab4b4</color>
+    <color name="extreme_level_bar">#ff4a9494</color>
+    <color name="default_bar_working">#3200a97e</color>
+    <color name="default_bar_sleeping">#32963c03</color>
+
+    <!-- Notification colors -->
+    <color name="low_level_notification">#6eeea4</color>
+    <color name="medium_level_notification">#f5ef4f</color>
+    <color name="high_level_notification">#f5c84f</color>
+    <color name="extreme_level_notification">#ffb42c17</color>
+
+    <!-- Content -->
+    <color name="content_background">#eee</color>
+    <color name="text">#ffffff</color>
+    <color name="button_hey">#6eabb2</color>
+    <color name="button_pressed">#dbe1e7</color>
+    <color name="button_disabled">#dbe1e7</color>
+    <color name="button_default">#3c5e62</color>
+    <color name="app_background">#eaedf1</color>
+    <color name="actionbar">#1f3133</color>
+
+    <color name="axis">#ffffff</color>
+    <color name="label">#ffffff</color>
+
+    <color name="line_bg">#00bba7</color>
+    <color name="line_grid">#00a694</color>
+    <color name="line">#ffffff</color>
+    <color name="line_fill">#30ffffff</color>
+    <color name="line_tooltip">#ffffff</color>
+
+    <color name="bar_bg">#f67743</color>
+    <color name="bar_bgbar">#d96739</color>
+    <color name="bar_fill1">#fed4c2</color>
+    <color name="bar_fill2">#ffc2a9</color>
+    <color name="bar_highest">#ffffff</color>
+    <color name="bar_grid">#1Aaa3302</color>
+    <color name="bar_tooltip">#aa3302</color>
+
+    <color name="horbar_bg">#f67743</color>
+    <color name="horbar_bgbar">#d96739</color>
+    <color name="horbar_fill">#cddc39</color>
+    <color name="horbar_highest">#e6ee9c</color>
+    <color name="horbar_grid">#827717</color>
+    <color name="horbar_tooltip">#f9fbe7</color>
+
+    <color name="stackbar_bg">#0091EA</color>
+    <color name="stackbar_line">#8002889a</color>
+    <color name="stackbar_fill1">#109bae</color>
+    <color name="stackbar_fill2">#33a3b3</color>
+    <color name="stackbar_fill3">#47b7c7</color>
+    <color name="stackbar_fill1_h">#05d6f1</color>
+    <color name="stackbar_fill2_h">#4fdcf0</color>
+    <color name="stackbar_fill3_h">#8fe5f1</color>
+    <color name="stackbar_tooltip">#ffffff</color>
+
+</resources>

@@ -1,0 +1,340 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeActionbar" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+    <style name="CallToActionButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/dr_calltoaction_button</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#00000000</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/main_qs</item>
+        <item name="android:titleTextStyle">@style/AppThemeActionbar.ActionBar.TitleTextStyle</item>
+        <item name="android:displayOptions">showHome|homeAsUp|showTitle</item>
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+
+    <style name="AppThemeActionbar.ActionBar.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFF</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+
+    <!-- ACTION BAR STYLES -->
+    <style name="CustomActionBar">
+        <item name="android:background">@drawable/dr_actionbar_background</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CustomActionBarTitle">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:padding">14dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="ActionBarIcon">
+        <item name="android:background">#00FFFFFF</item>
+    </style>
+
+    <!-- MAIN CONTENT STYLES -->
+    <style name="MainContent">
+        <item name="android:background">#ffffff</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+
+
+
+
+
+    <style name="SlideContainer">
+        <item name="android:background">#fff</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:paddingRight">40dp</item>
+        <item name="android:paddingTop">20dp</item>
+    </style>
+
+    <style name="SlideNoiseIndicatorIcon">
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="SlideLastNoiseMeasurement">
+        <item name="android:textColor">@color/main_qs</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="SlideLastNoiseMeasurementLabel">
+        <item name="android:textColor">@color/secondary_qs</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <style name="SlideDetailsContainer">
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">3dp</item>
+    </style>
+
+    <style name="SlideLastMoraleMeasurement">
+        <item name="android:textColor">@color/secondary_qs</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="SlideLastMoraleMeasurementLabel">
+        <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">-9dp</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+
+    <style name="SlideDetailsDivider">
+        <item name="android:background">#f1f1f1</item>
+        <item name="android:layout_marginTop">6dp</item>
+    </style>
+
+    <style name="SlideLastMeasurementDate">
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SlideLastMeasurementTime">
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- HOME GRAPH -->
+
+
+
+    <style name="HomeGraphTitle">
+        <item name="android:textColor">@color/main_qs</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+    </style>
+
+
+
+    <style name="HomeGraphContainer">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+
+
+
+    <style name="TopNotificationBarText">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:layout_marginTop">21dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+
+    <!-- SPLASH SCREEN -->
+    <style name="SplashScreenMainLayout">
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="SplashScreenLogo">
+        <item name="android:layout_marginTop">45dp</item>
+        <item name="android:textSize">45sp</item>
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="SplashScreenSlogan">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#f1f1f1</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="StatisticsLabel">
+        <item name="android:background">#f1f1f1</item>
+    </style>
+
+
+    <style name="StatisticsGraphTitle">
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="StatisticsGraphContainer">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="DayMinValue">
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="DayMaxValue">
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="DayValueLabel">
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">-5dp</item>
+        <item name="android:paddingBottom">3dp</item>
+    </style>
+
+    <!-- INFO CONTENT ACTIVITY -->
+    <style name="InfoActivityTitle">
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@color/main_qs</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="InfoActivityContent">
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@color/content_background</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/light_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+
+    <style name="CustomDialogTitle">
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@color/main_qs</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="CustomDialogSubTitle">
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@color/custom_fragment_dialog_subtitle_background</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="NoiseSourceCancelActionButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/main_qs</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:background">#fff</item>
+    </style>
+
+    <!-- Setup Guide Fragment -->
+    <style name="FragmentBackground">
+    </style>
+
+
+
+    <style name="FragmentTitleBackground">
+        <item name="android:padding">15dp</item>
+        <item name="android:background">@color/main_qs</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="FragmentCancelActionButton">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/main_qs</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#00000000</item>
+        <item name="android:background">#EFEFEF</item>
+    </style>
+
+    <style name="FragmentOkActionButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/dr_calltoaction_button</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:shadowColor">#00000000</item>
+    </style>
+
+</resources>

@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".Home">
+
+    <RelativeLayout
+        android:id="@+id/_RL_CustomActionbar"
+        style="@style/CustomActionBar"
+        android:layout_width="fill_parent">
+
+        <TextView
+            android:id="@+id/_TV_ScreenTitle"
+            style="@style/CustomActionBarTitle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Rescom Example" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/feelingsCheckboxesLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/_RL_CustomActionbar"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title2"
+            style="?android:listSeparatorTextViewStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="What's you mood" />
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/feelingsCheckboxes"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title2"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/state_1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Happy" />
+
+            <RadioButton
+                android:id="@+id/state_2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Sad" />
+
+
+            <RadioButton
+                android:id="@+id/state_3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Not bad" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feelingsCheckboxesLayout"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:text="Submit"
+        android:clickable="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="35dp"
+        style="@style/CallToActionButton">
+
+    </Button>
+
+   <!-- <TextView
+        android:id="@+id/title1"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/submitButton"
+        android:text="Activities" />
+
+    <ListView
+        android:id="@+id/activitiesListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/title1"></ListView>-->
+
+</RelativeLayout>
+
