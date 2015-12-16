@@ -31,14 +31,15 @@ import happiness.mimove.inria.fr.rescomexample.models.Mood;
 
 
 public class Home extends Activity {
+
     private static String Tag = "Home";
-    private CSMeasurement CSmood;
+
     private Button _BT_Submit;
     private String currentMood;
 
     private ActivityRecognitionHelper _activityManagerHelper = null;
-
     static private LocationManagerHelper _locationManagerHelper = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +62,11 @@ public class Home extends Activity {
 
     }
 
+
     private void updatePosition(Location location) {
 
     }
+
 
     @Override
     protected void onPause() {
@@ -73,6 +76,7 @@ public class Home extends Activity {
 
     }
 
+
     @Override
     public void onResume() {
         if (!_locationManagerHelper.isActive()) {
@@ -80,6 +84,7 @@ public class Home extends Activity {
         }
         super.onResume();
     }
+
 
     @Override
     protected void onStop() {
@@ -89,6 +94,7 @@ public class Home extends Activity {
         _activityManagerHelper.stopService(); // stop activity recog
         super.onStop();
     }
+
 
     public void initView() {
         setUpRadios();
@@ -106,7 +112,6 @@ public class Home extends Activity {
     }
 
 
-
     public void sendMoodToServer() {
         Mood mood = new Mood();
         Location location = _locationManagerHelper.getBestLastKnownLocation();
@@ -119,15 +124,14 @@ public class Home extends Activity {
         String sensorActiv = "";
         int sensorActivAccur = 0;
 
-    ActivityRecognitionIntentService.DataActivity userActivity = ActivityRecognitionIntentService.getLastActivity();
-     if (userActivity != null) {
-        sensorActiv = userActivity.getLastActivity();
-        sensorActivAccur = userActivity.getLastAccuracy();
-         Log.d(Tag,"sensorActiv="+sensorActiv);
-         mood.setRecogActivity(sensorActiv);
-         mood.setRecogConfidence(sensorActivAccur);
-    }
-        Log.d(Tag, "mood" + String.valueOf(mood == null));
+        ActivityRecognitionIntentService.DataActivity userActivity = ActivityRecognitionIntentService.getLastActivity();
+        if (userActivity != null) {
+            sensorActiv = userActivity.getLastActivity();
+            sensorActivAccur = userActivity.getLastAccuracy();
+            mood.setRecogActivity(sensorActiv);
+            mood.setRecogConfidence(sensorActivAccur);
+        }
+
         SendDataHelper.getInstance().sendMoodToServer(mood);
     }
 
@@ -147,17 +151,14 @@ public class Home extends Activity {
                 switch (i) {
                     case R.id.state_1: {
                         currentMood = "happy";
-                        Log.d(Tag, "currentMood=" + currentMood);
                         break;
                     }
                     case R.id.state_2: {
                         currentMood = "sad";
-                        Log.d(Tag, "currentMood=" + currentMood);
                         break;
                     }
                     case R.id.state_3: {
                         currentMood = "not bad";
-                        Log.d(Tag, "currentMood=" + currentMood);
                         break;
                     }
 

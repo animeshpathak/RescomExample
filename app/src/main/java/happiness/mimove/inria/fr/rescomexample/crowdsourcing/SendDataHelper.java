@@ -20,34 +20,12 @@ public class SendDataHelper {
     private CrowdsourcingMonitor _monitor = null;
     private Station _station;
     private GoFlowPushTask<CSMeasurement> _pushTaskMeasurment;
-    private GoFlowPushTask<CSActivityData> _pushTaskActivity;
 
     public static SendDataHelper getInstance() {
         if (_instance == null)
             _instance = new SendDataHelper();
 
         return _instance;
-    }
-
-    /**
-     * Send a ActivityData object to the server
-     *
-     * @param data The ActivityData instance to send
-     */
-    public long sendActivityToServer(ActivityData data) {
-        try {
-            CSActivityData csActivity = new CSActivityData();
-            csActivity.setCrowdSourcedValue(data);
-            csActivity.setCrowdSourcedLocation(_station);
-
-            if (_pushTaskActivity != null) {
-                long requestId = _pushTaskActivity.sendData(csActivity);
-                return requestId;
-            } else {
-            }
-        } catch (Exception e) {
-        }
-        return 0;
     }
 
     /**
