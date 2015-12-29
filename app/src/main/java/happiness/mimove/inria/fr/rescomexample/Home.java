@@ -2,16 +2,11 @@ package happiness.mimove.inria.fr.rescomexample;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.location.Location;
-import android.preference.PreferenceManager;
 
+import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -22,10 +17,6 @@ import com.ambientic.crowdsource.core.GoFlowFactory;
 
 import java.util.Calendar;
 
-import happiness.mimove.inria.fr.rescomexample.crowdsourcing.ActivityRecognitionHelper;
-import happiness.mimove.inria.fr.rescomexample.crowdsourcing.ActivityRecognitionIntentService;
-import happiness.mimove.inria.fr.rescomexample.crowdsourcing.CSMeasurement;
-import happiness.mimove.inria.fr.rescomexample.crowdsourcing.LocationManagerHelper;
 import happiness.mimove.inria.fr.rescomexample.crowdsourcing.SendDataHelper;
 import happiness.mimove.inria.fr.rescomexample.models.Mood;
 
@@ -37,8 +28,7 @@ public class Home extends Activity {
     private Button _BT_Submit;
     private String currentMood;
 
-    private ActivityRecognitionHelper _activityManagerHelper = null;
-    static private LocationManagerHelper _locationManagerHelper = null;
+
 
 
     @Override
@@ -48,30 +38,15 @@ public class Home extends Activity {
         initView();
         //Initialize crowdsourcing
         SendDataHelper.getInstance().initCrowdsourcing(getApplicationContext());
-        _activityManagerHelper = ActivityRecognitionHelper.getSingleton(getApplicationContext());
-        _activityManagerHelper.startService();
-        //Used to start listening to user location
-        if (_locationManagerHelper == null) {
-            _locationManagerHelper = new LocationManagerHelper(getApplicationContext());
-        }
-        _locationManagerHelper.addBetterLocationListener(new LocationManagerHelper.BetterLocationListener() {
-            public void onBetterLocation(Location location) {
-                updatePosition(location);
-            }
-        });
 
     }
 
 
-    private void updatePosition(Location location) {
-
-    }
 
 
     @Override
     protected void onPause() {
-        _locationManagerHelper.stop();
-        _activityManagerHelper.stopService(); // stop activity recog
+
         super.onPause();
 
     }
@@ -79,9 +54,7 @@ public class Home extends Activity {
 
     @Override
     public void onResume() {
-        if (!_locationManagerHelper.isActive()) {
-            _locationManagerHelper.findBestLocation(0, 0);
-        }
+
         super.onResume();
     }
 
@@ -90,8 +63,7 @@ public class Home extends Activity {
     protected void onStop() {
 
 
-        _locationManagerHelper.stop(); //Stop location tracking
-        _activityManagerHelper.stopService(); // stop activity recog
+
         super.onStop();
     }
 
@@ -113,24 +85,14 @@ public class Home extends Activity {
 
 
     public void sendMoodToServer() {
+        SendDataHelper.getInstance().connectCrowdsourcing();
         Mood mood = new Mood();
-        Location location = _locationManagerHelper.getBestLastKnownLocation();
-        final String device_id = GoFlowFactory.getSingleton().getDeviceInfo().getDeviceUID().toString();
-        mood.setUid(device_id);
+        LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
         mood.setTime(Calendar.getInstance());
         mood.setMood(currentMood);
         mood.setLatitude(location.getLatitude());
         mood.setLongitude(location.getLongitude());
-        String sensorActiv = "";
-        int sensorActivAccur = 0;
-
-        ActivityRecognitionIntentService.DataActivity userActivity = ActivityRecognitionIntentService.getLastActivity();
-        if (userActivity != null) {
-            sensorActiv = userActivity.getLastActivity();
-            sensorActivAccur = userActivity.getLastAccuracy();
-            mood.setRecogActivity(sensorActiv);
-            mood.setRecogConfidence(sensorActivAccur);
-        }
 
         SendDataHelper.getInstance().sendMoodToServer(mood);
     }
@@ -147,7 +109,6 @@ public class Home extends Activity {
         radioGroupMood.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                Log.d(Tag, "change");
                 switch (i) {
                     case R.id.state_1: {
                         currentMood = "happy";

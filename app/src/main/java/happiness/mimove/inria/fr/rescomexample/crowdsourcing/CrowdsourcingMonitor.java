@@ -10,7 +10,7 @@ import com.ambientic.incentive.core.IncentiveCallback;
  */
 public class CrowdsourcingMonitor implements GoFlowManagerCallback {
 
-    private static String Tag = "CroudsourcingMonitor";
+    private static String Tag = "CrowdsourcingMonitor";
 
     @Override
     public void crowdsourcingEnabled() {

@@ -14,12 +14,8 @@ public class Mood extends GoFlowValue {
     private double latitude;
     private double longitude;
 
-    private String uid;
     private Calendar time;
 
-    // activity recognition
-    private String recogActivity;
-    private int recogConfidence;
 
     public Mood() {
         super();
@@ -49,13 +45,6 @@ public class Mood extends GoFlowValue {
         this.longitude = longitude;
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
 
     public Calendar getTime() {
         return time;
@@ -65,19 +54,5 @@ public class Mood extends GoFlowValue {
         this.time = time;
     }
 
-    public String getRecogActivity() {
-        return recogActivity;
-    }
 
-    public void setRecogActivity(String recogActivity) {
-        this.recogActivity = recogActivity;
-    }
-
-    public int getRecogConfidence() {
-        return recogConfidence;
-    }
-
-    public void setRecogConfidence(int recogConfidence) {
-        this.recogConfidence = recogConfidence;
-    }
 }

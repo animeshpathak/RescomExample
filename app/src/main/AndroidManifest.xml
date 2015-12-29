@@ -31,14 +31,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="happiness.mimove.inria.fr.rescomexample.crowdsourcing.ActivityRecognitionIntentService" android:exported="false"></service>
 
 
-        <receiver android:name="happiness.mimove.inria.fr.rescomexample.crowdsourcing.ActivityRecognitionReceiver" android:exported="false">
-            <intent-filter>
-                <action android:name="ACTIVITY_RECOGNITION_DATA"/>
-            </intent-filter>
-        </receiver>
     </application>
 
 </manifest>

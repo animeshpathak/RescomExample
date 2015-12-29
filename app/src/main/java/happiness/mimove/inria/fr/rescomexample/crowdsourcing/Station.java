@@ -6,8 +6,10 @@
 
 package happiness.mimove.inria.fr.rescomexample.crowdsourcing;
 
-import com.ambientic.crowdsource.data.GoFlowLocation;
+import android.location.Address;
+
 import com.ambientic.crowdsource.data.DoExpose;
+import com.ambientic.crowdsource.data.GoFlowLocation;
 
 /**
  * Station
@@ -17,13 +19,20 @@ import com.ambientic.crowdsource.data.DoExpose;
  */
 public class Station extends GoFlowLocation {
 	@DoExpose
-	public static final Integer CLASS_VERSION = new Integer(3);
+	public static final Integer CLASS_VERSION = new Integer(4);
 
 	protected double latitude;
 	protected double longitude;
-	protected String name;
+	protected String name = null;
 
-	public Station() {
+    //
+    protected String[] address = null;
+    protected String ctryCode = null;
+    protected String ctry = null;
+    protected String zip = null;
+    protected String city = null;
+
+    public Station() {
 		super();
 	}
 
@@ -39,16 +48,47 @@ public class Station extends GoFlowLocation {
 	 * @param longitude
 	 *          Station longitude
 	 */
-	public Station(String id, String name, double latitude, double longitude) {
+	public Station(String id, double latitude, double longitude) {
 		super();
 		super.setId(id);
 
-		this.name = name;
 		this.latitude = latitude;
 		this.longitude = longitude;
 	}
 
-	/**
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(Address address) {
+        try {
+            if (address != null) {
+                this.address = new String[address.getMaxAddressLineIndex() + 1];
+                for (int x = 0; x <= address.getMaxAddressLineIndex(); x++) {
+                    this.address[x] = new String(address.getAddressLine(x));
+                }
+                this.ctry = address.getCountryName();
+                this.ctryCode = address.getCountryCode();
+                this.city = address.getLocality();
+                this.zip = address.getPostalCode();
+
+                this.latitude = address.getLatitude();
+                this.longitude = address.getLongitude();
+            } else {
+                this.address = null;
+                this.ctry = null;
+                this.ctryCode = null;
+                this.city = null;
+                this.zip = null;
+                this.latitude = 0;
+                this.longitude = 0;
+            }
+        } catch (Exception e) {
+        }
+    }
+
+
+    /**
 	 * Get station name
 	 * 
 	 * @return station name
